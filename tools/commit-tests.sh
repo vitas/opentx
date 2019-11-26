@@ -161,7 +161,8 @@ if [[ " X9D+2019 X9 ALL " =~ \ ${FLAVOR}\  ]] ; then
   # OpenTX on X9D+ 2019
   rm -rf ./*
   cmake "${COMMON_OPTIONS}" -DPCB=X9D+ -DPCBREV=2019 -DHELI=YES -DLUA=YES -DGVARS=YES "${SRCDIR}"
-  make -j"${CORES}" ${FIRMARE_TARGET}
+  build-wrapper-linux-x86-64 --out-dir bw_output make -j"${CORES}" ${FIRMARE_TARGET}
+  sonar-scanner
   make -j"${CORES}" libsimulator
   make -j"${CORES}" tests-radio
 fi
