@@ -52,7 +52,7 @@ before_install:
   - python3 -m pip install pillow clang
 
 script:
-  - ./tools/commit-tests.sh:
+  - ./tools/commit-tests.sh
 #  - build-wrapper-linux-x86-64 --out-dir bw_output ./tools/commit-tests.sh
 #  - sonar-scanner
 
