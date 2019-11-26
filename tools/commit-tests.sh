@@ -162,9 +162,10 @@ if [[ " X9D+2019 X9 ALL " =~ \ ${FLAVOR}\  ]] ; then
   rm -rf ./*
   cmake "${COMMON_OPTIONS}" -DPCB=X9D+ -DPCBREV=2019 -DHELI=YES -DLUA=YES -DGVARS=YES "${SRCDIR}"
   build-wrapper-linux-x86-64 --out-dir bw_output make -j"${CORES}" ${FIRMARE_TARGET}
-  sonar-scanner
   make -j"${CORES}" libsimulator
   make -j"${CORES}" tests-radio
+  cd ..
+  sonar-scanner
 fi
 
 if [[ " X9E X9 ALL " =~ \ ${FLAVOR}\  ]] ; then
