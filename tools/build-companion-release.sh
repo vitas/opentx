@@ -31,7 +31,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 if [ "$3" != "" ]; then
-  COMMON_OPTIONS="${COMMON_OPTIONS} -DVERSION_SUFFIX=$3"
+  COMMON_OPTIONS="${COMMON_OPTIONS} -DVERSION_SUFFIX=$3 ${COMMON_OPTIONS_EXT}"
 fi
 
 rm -rf build
